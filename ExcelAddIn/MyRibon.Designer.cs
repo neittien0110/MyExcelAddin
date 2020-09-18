@@ -39,7 +39,7 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.button1 = this.Factory.CreateRibbonButton();
+            this.buttonImage2Cells = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -53,15 +53,21 @@
             // 
             // group1
             // 
-            this.group1.Items.Add(this.button1);
+            this.group1.Items.Add(this.buttonImage2Cells);
             this.group1.Label = "group1";
             this.group1.Name = "group1";
             // 
-            // button1
+            // buttonImage2Cells
             // 
-            this.button1.Description = "Haha";
-            this.button1.Label = "button1";
-            this.button1.Name = "button1";
+            this.buttonImage2Cells.Description = "Haha";
+            this.buttonImage2Cells.Label = "Cell nghệ thuật";
+            this.buttonImage2Cells.Name = "buttonImage2Cells";
+            this.buttonImage2Cells.OfficeImageId = "ActiveXImage";
+            this.buttonImage2Cells.ScreenTip = "Chuyển ảnh thành cell";
+            this.buttonImage2Cells.ShowImage = true;
+            this.buttonImage2Cells.SuperTip = "Mỗi pixcel ảnh sẽ trở thành một cell trên excel. Ảnh được tự động co sao cho số đ" +
+    "iểm ảnh không quá 82455 do giới hạn của Excel";
+            this.buttonImage2Cells.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonImage2Cells_Click);
             // 
             // MyRibon
             // 
@@ -81,7 +87,7 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonImage2Cells;
     }
 
     partial class ThisRibbonCollection
