@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using System.Windows.Forms;
 
 namespace ExcelAddIn
 {
@@ -17,11 +18,24 @@ namespace ExcelAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-
+            MessageBox.Show("Chào");
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+        }
+
+        /// <summary>
+        ///         Chồng hàm để Ribbon hiện thị trên Excel Ribbon
+        /// </summary>
+        /// <returns></returns>
+        protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
+        {
+            {
+                return Globals.Factory.GetRibbonFactory().CreateRibbonManager(
+                    new Microsoft.Office.Tools.Ribbon.IRibbonExtension[] { new MyRibon() });
+            }
+
         }
 
         #region VSTO generated code
