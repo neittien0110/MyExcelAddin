@@ -45,7 +45,7 @@ namespace MyExcelAddIn
             string ShapeName,
             [ExcelDna.Integration.ExcelArgument(Description = "Văn bản cần chuyển thành QRcode. Ví dụ: xin chào bạn")]
             string Text,
-            [ExcelDna.Integration.ExcelArgument(Description = "Khoảng trắng giữa QRCode và viên ngoài của Shape. Ví dụ: 0")]
+            [ExcelDna.Integration.ExcelArgument(Description = "Khoảng trắng giữa QRCode và viên ngoài của Shape. Ví dụ: 0", Name="[Margin=0]")]
             int Margin = 0)
         {
             Application xlApp = (Application)ExcelDnaUtil.Application;
