@@ -14,16 +14,6 @@ namespace ExcelDna.XFunctions
 
         public void AutoOpen()
         {
-            var functions = ExcelRegistration.GetExcelFunctions().ToList();
-            if (HasNativeXMatch())
-            {
-                foreach (var func in functions)
-                {
-                    func.FunctionAttribute.Name = "HUST." + func.FunctionAttribute.Name ;
-                }
-            }
-            functions.RegisterFunctions();
-
             ///Cho phép hiển thị các dòng gợi ý hàm và gợi ý tham số của các thuộc tính
             ///<see cref="ExcelDna.Integration.ExcelFunctionAttribute"/> và <see cref="ExcelDna.Integration.ExcelArgumentAttribute"/>
             IntelliSenseServer.Install();
