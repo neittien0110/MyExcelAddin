@@ -17,6 +17,13 @@ namespace ExcelDna.XFunctions
             ///Cho phép hiển thị các dòng gợi ý hàm và gợi ý tham số của các thuộc tính
             ///<see cref="ExcelDna.Integration.ExcelFunctionAttribute"/> và <see cref="ExcelDna.Integration.ExcelArgumentAttribute"/>
             IntelliSenseServer.Install();
+
+            // There are various options for wrapping and transforming your functions
+            // See the Source\Samples\Registration.Sample project for a comprehensive example
+            // Here we just change the attribute before registering the functions
+            ExcelRegistration.GetExcelFunctions()
+                             .Select(UpdateHelpTopic)
+                             .RegisterFunctions();
         }
 
         public void AutoClose()
@@ -30,6 +37,17 @@ namespace ExcelDna.XFunctions
             int xlfXMatch = 620;
             var retval = XlCall.TryExcel(xlfXMatch, out var _, 1, 1);
             return (retval == XlCall.XlReturn.XlReturnSuccess);
+        }
+
+        /// <summary>
+        ///      Thiết lập url mặc định trợ giúp các hàm
+        /// </summary>
+        /// <param name="funcReg"></param>
+        /// <returns></returns>
+        public ExcelFunctionRegistration UpdateHelpTopic(ExcelFunctionRegistration funcReg)
+        {
+            funcReg.FunctionAttribute.HelpTopic = "http://techlinkvn.com";
+            return funcReg;
         }
     }
 }

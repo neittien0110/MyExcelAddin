@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="AddIn.cs" />
     <Compile Include="Barcode.cs" />
+    <Compile Include="ExcelDNAExamples.cs" />
     <Compile Include="FinanceTools.cs" />
     <Compile Include="Hust.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
