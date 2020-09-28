@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelFuntions", "ExcelFunti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddIn", "ExcelAddIn\ExcelAddIn.csproj", "{44C65850-3727-4FAE-A2B4-081B46D63904}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MySetup", "MySetup\MySetup.vdproj", "{980AFC8D-36B6-4EEF-80C4-DD0DE69DD22F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{44C65850-3727-4FAE-A2B4-081B46D63904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44C65850-3727-4FAE-A2B4-081B46D63904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44C65850-3727-4FAE-A2B4-081B46D63904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{980AFC8D-36B6-4EEF-80C4-DD0DE69DD22F}.Debug|Any CPU.ActiveCfg = Debug
+		{980AFC8D-36B6-4EEF-80C4-DD0DE69DD22F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
