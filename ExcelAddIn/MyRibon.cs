@@ -187,7 +187,16 @@ namespace ExcelAddIn
                         case "AppointmentColor1": currentRange.Interior.Color = Color.FromArgb(saturationInt, 0, 0); break; //red
                         case "AppointmentColor2": currentRange.Interior.Color = Color.FromArgb(0, 0, saturationInt); break; //green
                         case "AppointmentColor3": currentRange.Interior.Color = Color.FromArgb(0, saturationInt, 0); break; //blue
+                        case "AppointmentColor4": currentRange.Interior.Color = Color.FromArgb(saturationInt, saturationInt, saturationInt); break; //gray
                         default: break;
+                    }
+                    if (saturationInt > 128) // change font color to black or white based on background's saturation
+                    {
+                        currentRange.Font.Color = Color.Black;
+                    }
+                    else
+                    {
+                        currentRange.Font.Color = Color.White;
                     }
                     currentRange.Value = saturationInt; // cell value = saturation value
                 }
@@ -209,6 +218,24 @@ namespace ExcelAddIn
             //currentRange.Interior.Color = Color.FromArgb(0, 200, 0);
 
         }
+
+        //private void buttonFontBlackWhite_Click()
+        //{   //Change font color to black or white - if >128, black; else if <=128, white - stnd Tuong
+            
+        //    //get selected cells
+        //    Range currentRange = (Range)Globals.ThisAddIn.Application.Selection as
+        //        Microsoft.Office.Interop.Excel.Range;
+        //    if (currentRange == null) return;
+
+
+        //    //MessageBox.Show(currentRange.Font.Color.ToString()); //Color is stored in decimal number 
+            
+        //    //string str = "101";
+        //    //int s = int.Parse(str);
+        //    //MessageBox.Show(s.ToString("X"));
+
+        //    MessageBox.Show(int.Parse(currentRange.Font.Color.ToString()).ToString("X"));
+        //}
         static Bitmap ResizeBitmap(Bitmap bmp, int width, int height)
         {
             Bitmap result = new Bitmap(width, height);
