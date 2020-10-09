@@ -1,6 +1,12 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Text;
 using ExcelDna.Integration;
 using Microsoft.Office.Interop.Excel;       // Cài đặt Microsoft.Office.Core (Nuget) và Add Reference Microsoft.Office.Interop.Excel
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 namespace MyExcelAddIn
 {
@@ -87,5 +93,36 @@ namespace MyExcelAddIn
             return Text;
         }
 
+        //Generate QRCode using ZXing library
+        [ExcelDna.Integration.ExcelFunction(Description = "QRCode generator by ZXing lib")]
+        public static object QRCodeZ(
+            [ExcelDna.Integration.ExcelArgument(Description = "Text to be transformed to QRCode. Example: \"hello\"")] 
+            string Text)
+        {
+            string imageFile = "C:\\Users\\ASUS\\Desktop\\myQR.png"; // image file to save as QRCode image, change path in different devices
+            QRCodeWriter qr = new ZXing.QrCode.QRCodeWriter(); //QRCode as a BitMatrix 2D array
+
+            Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>();
+            hint.Add(EncodeHintType.MARGIN, 0); // margin of the QRCode image
+
+
+            var matrix = qr.encode(Text, BarcodeFormat.QR_CODE, 350, 350, hint); // encode QRCode matrix from source text
+            
+            ZXing.BarcodeWriter w = new ZXing.BarcodeWriter();
+            Bitmap img = w.Write(matrix); // QRCode Bitmap image
+            img.Save(@imageFile, System.Drawing.Imaging.ImageFormat.Png); // save QRCode image to local device
+
+            Application xlApp = (Application)ExcelDnaUtil.Application;
+
+            Workbook wb = xlApp.ActiveWorkbook;
+            if (wb == null) return "";
+
+            Worksheet ws = wb.ActiveSheet;
+            
+            //add QRCode image to this worksheet
+            ws.Shapes.AddPicture(@imageFile, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 0, 0, 185, 42);
+
+            return Text;
+        }
     }
 }
