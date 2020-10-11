@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI onLoad="Ribbon_Load" xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+    <ribbon>
+        <tabs>
+            <tab idMso="TabAddIns">
+                <group id="group1" label="Nghệ thuật">
+                    <button id="buttonImage2Cells" imageMso="AllCategories" onAction="buttonImage2Cells_Click" screentip="Chuyển ảnh thành cell" supertip="Mỗi pixcel ảnh sẽ trở thành một cell trên excel. Ảnh được tự động co sao cho số điểm ảnh không quá 82455 do giới hạn của Excel" description="Haha" label="Tô màu cell" size="large" />
+                </group>
+                <group id="groupAlgorithm" label="Thuật toán">
+                    <button id="button1" imageMso="BlackAndWhiteLightGrayscale" screentip="Màu hóa ma trận giá trị" supertip="Lựa chọn một bảng, sau đó bấm nút Màu hóa. Các cell trong bảng sẽ được tô màu với mức xám thay đổi  từ màu đen (0) tới mức cực đại, của màu chỉ định trong dropbox" label="Màu hóa" size="large" />
+                    <dropDown id="dropDown1" label="Màu" showImage="false">
+                        <item id="__id6" imageMso="AppointmentColor1" label="Đỏ" />
+                        <item id="__id7" imageMso="AppointmentColor3" label="Xanh lá" />
+                        <item id="__id8" imageMso="AppointmentColor2" label="Xanh dương" />
+                    </dropDown>
+                    <editBox id="editSaturationPeak" label="Cực đại" showImage="false" />
+                </group>
+                <group id="group2" label="Âm thanh/Giọng nói">
+                    <button id="buttonTextToSpeech" imageMso="SoundInsertFromFile" onAction="buttonTextToSpeech_Click" label="Đọc tiếng Anh" />
+                    <button id="buttonSpeechVN" imageMso="SoundInsertFromFile" onAction="buttonSpeechVN_Click" label="Đọc tiếng Việt" />
+                    <dialogBoxLauncher>
+                        <button id="group2__btn" />
+                    </dialogBoxLauncher>
+                </group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>

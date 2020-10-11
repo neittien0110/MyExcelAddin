@@ -19,7 +19,10 @@ namespace ExcelDna.XFunctions
             {
                 foreach (var func in functions)
                 {
+                    /// Thêm prefix cho tên của tất cả các hàm, giúp dễ tìm
                     func.FunctionAttribute.Name = "HUST." + func.FunctionAttribute.Name ;
+                    /// Link hướng dẫn sử dụng hàm
+                    func.FunctionAttribute.HelpTopic = "https://users.soict.hust.edu.vn/sinno/projects/myexceladdin/";
                 }
             }
             functions.RegisterFunctions();

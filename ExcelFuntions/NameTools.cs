@@ -51,7 +51,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="text">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Từ cuối cùng</returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Trả về văn bản ở dạng tiếng Việt không dấu")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Trả về văn bản ở dạng tiếng Việt không dấu", Category = "Text")]
         public static string VanBanKhongDau(
             [ExcelDna.Integration.ExcelArgument(Description = "Văn bản tiếng Việt có dấu. Ví dụ Lê Văn Long, ")] string text
             )
@@ -64,7 +64,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="HoTen">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Từ cuối cùng</returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Trả về tên ở dạng tiếng Việt không dấu")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Trả về tên ở dạng tiếng Việt không dấu", Category = "Text")]
         public static string LayTenKhongDau(
             [ExcelDna.Integration.ExcelArgument(Description = "Tên có có dấu. Ví dụ Lê Văn Long, ")] string HoTen
             )
@@ -77,7 +77,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="HoVaTen">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Ví dụ Thuật</returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên", Category = "Text")]
         public static string LayTen(
             [ExcelDna.Integration.ExcelArgument(Description = "Họ và tên đầy đủ. Ví dụ Đinh Công Thuật")] string HoVaTen)
         {
@@ -89,7 +89,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="HoVaTen">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Ví dụ Đinh </returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên", Category = "Text")]
         public static string LayHo(
             [ExcelDna.Integration.ExcelArgument(Description = "Họ và tên đầy đủ. Ví dụ Đinh Công Thuật")] string HoVaTen)
         {
@@ -101,7 +101,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="HoVaTen">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Ví dụ Công</returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên", Category = "Text")]
         public static string LayDem(
             [ExcelDna.Integration.ExcelArgument(Description = "Họ và tên đầy đủ. Ví dụ Đinh Công Thuật")] string HoVaTen)
         {
@@ -113,7 +113,7 @@ namespace MyExcelAddIn
         /// </summary>
         /// <param name="HoVaTen">Họ và tên đầy đù bằng tiếng Việt có dấu. Ví dụ Đinh Công Thuật</param>
         /// <returns>Ví dụ ĐCT</returns>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tên sinh viên", Category = "Text")]
         public static string LayCacChuCaiDau(
             [ExcelDna.Integration.ExcelArgument(Description = "Họ và tên đầy đủ. Ví dụ Đinh Công Thuật")] string HoVaTen)
         {

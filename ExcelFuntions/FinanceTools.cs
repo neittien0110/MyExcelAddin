@@ -141,7 +141,7 @@ namespace ExcelFuntions
             return KetQua;
         }
 
-        [ExcelDna.Integration.ExcelFunction(Description = "Viết số bằng chữ tiếng Việt có dấu")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Viết số bằng chữ tiếng Việt có dấu", Category = "Text")]
         public static string BangChu(
             [ExcelDna.Integration.ExcelArgument(Description = "Số nguyên cần viết bằng chữ")] int number
             )
@@ -160,7 +160,7 @@ namespace ExcelFuntions
         ///     Website được crawl có ngày tháng: https://portal.vietcombank.com.vn/UserControls/TVPortal.TyGia/pListTyGia.aspx?txttungay=20/09/2020&BacrhID=68&isEn=True
         ///     hoặc web được crawl hiện tại:  https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx
         /// </remarks>
-        [ExcelDna.Integration.ExcelFunction(Description = "Lấy tỉ giá hối đoái ngoại tệ và vnđ theo niêm yết tại portal.vietcombank.com.vn")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Lấy tỉ giá hối đoái ngoại tệ và vnđ theo niêm yết tại portal.vietcombank.com.vn", Category = "Financial")]
         public static string TyGia(
             [ExcelDna.Integration.ExcelArgument(Description = "Mã ngoại tệ. Giá trị hợp lệ: AUD,CAD,CHF,CNY,DKK,EUR,GBP,HKD,INR,JPY,KRW,KWD,MYR,NOK,RUB,SAR,SEK,SGD,THB,USD")] string currency,
             [ExcelDna.Integration.ExcelArgument(Description = "Loại tỷ giá. Giá trị hợp lệ: mua,bán,chuyển khoản,buy,sell,transfer")] string type,

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "myexceladdin",
+  "private_key_id": "f319aae9d9a82a4aac79e43f9bf11a5e5f477a98",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrzRay+NdoCLX5\nb3Xxn9cM5oVANjaGDVzfjYhstM+hnTEgnb8yl8b20n+M+o4hG2jO66jbHet9oNDn\np+He2VKnlrl2bPYh0ya0SOoewYiKbfW+MYOUne0aGgUkq5ZGhVDt1gPqurQrS5SO\nr0XBXqD1fvGbWzof2UYeNxZP4lN3VjW+8zKhpT5jCn/saw7uAB7yfNoNIfMj54gg\nMuzQqnbo8josLS+OFCsZ63tYvyOxse2jtXFMa1ias5UFXEL+QvuCSMyk6VsGeub2\nJs8aNFXQlt8JwBbUqf6sKT9WKL/DkxszlE3ICHhPL1+jn8DQBAlKHgXrnedzPcOZ\nVbaYtPGtAgMBAAECggEAGai4aVjsHHrMlFQW3/8jqHwXeRcqaTa+tm7WP4d5HqYH\nwTDTmR6nwJPWKWap6qeZguoZ3pwR4MIE4Xcmr4Ny1QVDGZJoPSC4aPhzlc4JnW89\n4ump7CedfXwBuk/cUm0Klh2+7lnIm1Ie/nk5aF+V7QSdg5AKVtkQdWZ8hnLYTNF2\nnebbvDFfPKozGhhtdV8DHiwG9J5VnmILUzWm0c9J0zt0exsifkUO3KgYsjsJRE6I\nIuscl6tlXawSDmYxHuetb8l/vJCjPb1fturawgXjbVDtNcDiOlrs2KJKWcbanmwM\n+edagRTMWs6NXPERz47msUzGE4JtiWDpxddDovbs+wKBgQDycTA+dpHw5OrXn3y9\nGHZm5B2c3TrZViuzdqeIFUH1vUaregGCoOA08J872vgccPNYUXukqSPRae5Oevah\nQ5s4MazhAaDpd1Co0K84SY5AwA4/6AB7dM6dzzJ776Z7vlZNJ40BA2mHkAZsDbWF\n7JQ0o2XZYpVNIMLszz5RrQXSpwKBgQC1aJm/twtrSjSI0QDvgS3NCRtezeeb5Hhq\n6Rlyxf9ufMMZY6LAj+Ez0XTNvkWFuY4hTIJNatFI6EKd+6jExMTl+Er+srVbv/71\ng2tZS5T6lkWTN+PHR+MbIW589QemTe/aiWb9vJRNQDKaLZ+IKVmIO43eY2tt0URl\nPCyeag8HiwKBgBN7CNdcC6oBmuUsiYdgOdNWrRJ3rEzeYbCP7jI/Ewe957nLmed3\nKczXMNRMafdPFB6anYbDmH8xNdbUhpC6r/Q5+Zwy100rKy4FZq7tKiMFy59S8wb4\ngcmoZnQS85up1aFpdikIrygXaIyyJU3XjqkUIBDxnPGPmloQ5P8HGhqtAoGBAI9U\n3y3X7YDO96UmJewWj96RlHuaiqXkpbQrCr1hbYmZr/jufVhSFiiAFR6+eGXJD2CF\n9+o9PLCzOndisJ0Pr1bYkECfaKXelA7d0EKUclhvxPcl0KXSycDU8FxwqaOfrqRn\nreVLS42h7Jle9M57hU8bZuNQgEAbeUPXgJWFzOwzAoGAcXgz/4vxHeU/Ucew1slb\nJ4JaHYtoPb0kXk8K50HLvbTTnyFD/SFHUd0o8ml6d43B8r7ef8hS8nkVavJDV6aD\nrHu3oVXLCywIxD9vCWW+NuW0X0bRaiaEjRXEr+pwu5GV5UPam/IUKmZ5dGAZI7Qh\nfD7c3mAooQPy9GDfTDkE7SA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "my-text-to-speech-sa@myexceladdin.iam.gserviceaccount.com",
+  "client_id": "109338423477769516979",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/my-text-to-speech-sa%40myexceladdin.iam.gserviceaccount.com"
+}

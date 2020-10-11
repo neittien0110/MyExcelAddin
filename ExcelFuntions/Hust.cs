@@ -21,7 +21,7 @@ namespace MyExcelAddIn
         /// <param name="MaSoSinhVien">Mã số SV do trường cấp. Ví dụ 20002987</param>
         /// <returns></returns>
         /// <remarks> ExcelDna.Integration.ExcelFunction(Name = ...)  sẽ qui định tên hàm để gọi ra trong Excel </remarks>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tính địa chỉ email HUST của sinh viên dựa theo tên và mã số sinh viên", Name = "EmailSinhVien")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tính địa chỉ email HUST của sinh viên dựa theo tên và mã số sinh viên", Name = "EmailSinhVien", Category = "Text")]
         public static object StudentEmail(
             [ExcelDna.Integration.ExcelArgument(Description ="Họ và tên đầy đủ. Ví dụ Đinh Công Thuật")]  string HoVaTen,  
             [ExcelDna.Integration.ExcelArgument(Description ="Mã số SV do trường cấp. Ví dụ 20002987")]   string MaSoSinhVien)
@@ -38,7 +38,7 @@ namespace MyExcelAddIn
         /// <param name="name"></param>
         /// <returns></returns>
         /// <remarks> Hàm async, cho phép trả về dữ liệu chậm hơn </remarks>
-        [ExcelDna.Integration.ExcelFunction(Description = "Tìm địa chỉ email HUST của sinh viên dựa theo tên và mã số sinh viên", Name = "EmailSinhVien2")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tìm địa chỉ email HUST của sinh viên dựa theo tên và mã số sinh viên", Name = "EmailSinhVien2", Category = "Text")]
         public static object StudentEmail2(string HoVaTen, string MaSoSinhVien)
         {
             return ExcelAsyncUtil.Run("RunSomethingDelay", new[] { HoVaTen, MaSoSinhVien }, () => RunSomethingDelay(HoVaTen));

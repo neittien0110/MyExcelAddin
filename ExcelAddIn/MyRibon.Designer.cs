@@ -40,6 +40,8 @@
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl2 = this.Factory.CreateRibbonDropDownItem();
             Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl3 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher ribbonDialogLauncherImpl1 = this.Factory.CreateRibbonDialogLauncher();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyRibon));
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.buttonImage2Cells = this.Factory.CreateRibbonButton();
@@ -47,9 +49,13 @@
             this.button1 = this.Factory.CreateRibbonButton();
             this.dropDown1 = this.Factory.CreateRibbonDropDown();
             this.editSaturationPeak = this.Factory.CreateRibbonEditBox();
+            this.groupAudio = this.Factory.CreateRibbonGroup();
+            this.buttonTextToSpeech = this.Factory.CreateRibbonButton();
+            this.buttonSpeechVN = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.groupAlgorithm.SuspendLayout();
+            this.groupAudio.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -57,6 +63,7 @@
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.groupAlgorithm);
+            this.tab1.Groups.Add(this.groupAudio);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -119,6 +126,41 @@
             this.editSaturationPeak.Name = "editSaturationPeak";
             this.editSaturationPeak.Text = "255";
             // 
+            // groupAudio
+            // 
+            ribbonDialogLauncherImpl1.OfficeImageId = "FontsReplaceFonts";
+            this.groupAudio.DialogLauncher = ribbonDialogLauncherImpl1;
+            this.groupAudio.Items.Add(this.buttonTextToSpeech);
+            this.groupAudio.Items.Add(this.buttonSpeechVN);
+            this.groupAudio.Label = "Âm thanh/Giọng nói";
+            this.groupAudio.Name = "groupAudio";
+            this.groupAudio.DialogLauncherClick += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.groupAudio_DialogLauncherClick);
+            // 
+            // buttonTextToSpeech
+            // 
+            this.buttonTextToSpeech.Image = ((System.Drawing.Image)(resources.GetObject("buttonTextToSpeech.Image")));
+            this.buttonTextToSpeech.Label = "Đọc tiếng Anh";
+            this.buttonTextToSpeech.Name = "buttonTextToSpeech";
+            this.buttonTextToSpeech.OfficeImageId = "SoundInsertFromFile";
+            this.buttonTextToSpeech.ScreenTip = "Đọc văn bản đã chọn bằng tiếng Anh";
+            this.buttonTextToSpeech.ShowImage = true;
+            this.buttonTextToSpeech.SuperTip = "Chọn một hoặc nhiều cell cần đọc, và bấm nút này. Hàm sẽ kết nối với dịch vụ Cont" +
+    "ana và không cần kết nối internet";
+            this.buttonTextToSpeech.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonTextToSpeech_Click);
+            // 
+            // buttonSpeechVN
+            // 
+            this.buttonSpeechVN.Image = ((System.Drawing.Image)(resources.GetObject("buttonSpeechVN.Image")));
+            this.buttonSpeechVN.Label = "Đọc tiếng Việt";
+            this.buttonSpeechVN.Name = "buttonSpeechVN";
+            this.buttonSpeechVN.OfficeImageId = "SoundInsertFromFile";
+            this.buttonSpeechVN.ScreenTip = "Đọc văn bản đã chọn bằng tiếng Việt";
+            this.buttonSpeechVN.ShowImage = true;
+            this.buttonSpeechVN.SuperTip = "Chọn một hoặc nhiều cell, rồi bấm nút này để nghe giọng nói tiếng Việt. Hàm sử dụ" +
+    "ng dịch vụ tổng hợp tiếng nói tại website code.responsivevoice.org  nên nhất thi" +
+    "ết phải có kết nối internet";
+            this.buttonSpeechVN.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSpeechVN_Click);
+            // 
             // MyRibon
             // 
             this.Name = "MyRibon";
@@ -131,6 +173,8 @@
             this.group1.PerformLayout();
             this.groupAlgorithm.ResumeLayout(false);
             this.groupAlgorithm.PerformLayout();
+            this.groupAudio.ResumeLayout(false);
+            this.groupAudio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -144,6 +188,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDown1;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editSaturationPeak;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupAudio;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonTextToSpeech;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSpeechVN;
     }
 
     partial class ThisRibbonCollection

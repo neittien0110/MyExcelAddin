@@ -39,7 +39,7 @@ namespace MyExcelAddIn
             return sURL.ToString();
         }
 
-        [ExcelDna.Integration.ExcelFunction(Description = "Tạo mã QRCode")]
+        [ExcelDna.Integration.ExcelFunction(Description = "Tạo mã QRCode", Category = "Text")]
         public static object QRCode(
             [ExcelDna.Integration.ExcelArgument(Description = "Tên của Shape sẽ chứa ảnh QRCode (xem bằng Selection Pane). Nếu shape chưa tồn tại, hàm sẽ tự tạo mới. Ví dụ: tl123")] 
             string ShapeName,
