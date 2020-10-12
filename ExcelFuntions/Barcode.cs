@@ -101,7 +101,7 @@ namespace MyExcelAddIn
             [ExcelDna.Integration.ExcelArgument(Description = "Text to be transformed to QRCode. Example: \"hello\"")] 
             string Text)
         {
-            string imageFile = "C:\\Users\\ASUS\\Desktop\\myQR.png"; // image file to save as QRCode image, change path in different devices
+            //string imageFile = "C:\\Users\\ASUS\\Desktop\\myQR.png"; // image file to save as QRCode image, change path in different devices
             QRCodeWriter qr = new ZXing.QrCode.QRCodeWriter(); //QRCode as a BitMatrix 2D array
 
             Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>();
