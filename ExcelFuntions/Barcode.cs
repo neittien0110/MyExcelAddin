@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text;
+using System.Windows;
 using ExcelDna.Integration;
 using Microsoft.Office.Interop.Excel;       // Cài đặt Microsoft.Office.Core (Nuget) và Add Reference Microsoft.Office.Interop.Excel
 using ZXing;
@@ -110,18 +112,29 @@ namespace MyExcelAddIn
             
             ZXing.BarcodeWriter w = new ZXing.BarcodeWriter();
             Bitmap img = w.Write(matrix); // QRCode Bitmap image
-            img.Save(@imageFile, System.Drawing.Imaging.ImageFormat.Png); // save QRCode image to local device
-
+            //img.Save(@imageFile, System.Drawing.Imaging.ImageFormat.Png); // save QRCode image to local device
+            
+            MemoryStream ms = new MemoryStream(); 
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png); //save QRCode image to memory stream
+            System.Drawing.Image i = System.Drawing.Image.FromStream(ms); // create image in Image form
+            
             Application xlApp = (Application)ExcelDnaUtil.Application;
-
             Workbook wb = xlApp.ActiveWorkbook;
             if (wb == null) return "";
-
             Worksheet ws = wb.ActiveSheet;
-            
-            //add QRCode image to this worksheet
-            ws.Shapes.AddPicture(@imageFile, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 0, 0, 185, 42);
 
+            //the following codes took me hours, just leave them here for references
+            //add QRCode image to this worksheet
+            //ws.Shapes.AddPicture(@imageFile, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 0, 0, 185, 185);
+            //Shape myShape = ws.Shapes.AddShape(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRectangle, xlApp.ActiveCell.Left, xlApp.ActiveCell.Top, xlApp.ActiveCell.Width, xlApp.ActiveCell.Height);
+            //System.Drawing.Image.FromStream(ms);
+            //myShape.Fill.UserPicture(imageMemoryStream.ToString());
+            //ws.
+            //ws.Shapes.AddPicture(i, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 0, 0, 185, 185);
+            
+            Clipboard.SetDataObject(i); //set image to clipboard
+            ws.Paste(); //just paste the clipboard
+            
             return Text;
         }
     }
