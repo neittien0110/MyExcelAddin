@@ -19,7 +19,7 @@ namespace ExcelAddIn
         private void buttonImage2Cells_Click(object sender, RibbonControlEventArgs e)
         {   //load image into cells - by MSc Tien
             Bitmap img;
-            const int MAX_HEIGHT = 320;
+            //const int MAX_HEIGHT = 320;
             const int MAX_PIXEL = 82455; //chính xác đúng ngần này điểm
 
             /// Tạo dialog để chọn file ảnh
@@ -182,7 +182,7 @@ namespace ExcelAddIn
             {
                 if (saturationInt >= 0 && saturationInt <= 255) //check if the saturation value is in range 0 to 255
                 {
-                    switch (color) // color to display with saturation
+                    switch (color) // color to display with saturation 
                     {
                         case "AppointmentColor1": currentRange.Interior.Color = Color.FromArgb(saturationInt, 0, 0); break; //red
                         case "AppointmentColor2": currentRange.Interior.Color = Color.FromArgb(0, 0, saturationInt); break; //green
