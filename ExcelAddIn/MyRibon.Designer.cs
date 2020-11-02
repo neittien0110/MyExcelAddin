@@ -50,12 +50,12 @@ namespace ExcelAddIn
             this.buttonColorize = this.Factory.CreateRibbonButton();
             this.dropDownColorRGB = this.Factory.CreateRibbonDropDown();
             this.editSaturationPeak = this.Factory.CreateRibbonEditBox();
-            //this.groupFontBlackWhite = this.Factory.CreateRibbonGroup();
-            //this.buttonFontBlackWhite = this.Factory.CreateRibbonButton();
+            this.groupCortana = this.Factory.CreateRibbonGroup();
+            this.buttonCortana = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.groupImportImage.SuspendLayout();
             this.groupAlgorithm.SuspendLayout();
-            //this.groupFontBlackWhite.SuspendLayout();
+            this.groupCortana.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -63,7 +63,7 @@ namespace ExcelAddIn
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.groupImportImage);
             this.tab1.Groups.Add(this.groupAlgorithm);
-            //this.tab1.Groups.Add(this.groupFontBlackWhite);
+            this.tab1.Groups.Add(this.groupCortana);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -87,23 +87,23 @@ namespace ExcelAddIn
             this.buttonImage2Cells.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonImage2Cells_Click);
 
             //
-            // groupFontBlackWhite
+            // groupCortana
             //
-            //this.groupFontBlackWhite.Items.Add(this.buttonFontBlackWhite);
-            //this.groupFontBlackWhite.Label = "Black White Font";
-            //this.groupFontBlackWhite.Name = "groupFontBlackWhite";
+            this.groupCortana.Items.Add(this.buttonCortana);
+            this.groupCortana.Label = "Cortana";
+            this.groupCortana.Name = "groupCortana";
             //
-            // buttonFontBlackWhite
+            // buttonCortana
             //
-            //this.buttonFontBlackWhite.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            //this.buttonFontBlackWhite.Description = "???";
-            //this.buttonFontBlackWhite.Label = "Change";
-            //this.buttonFontBlackWhite.Name = "buttonFontBlackWhite";
-            //this.buttonFontBlackWhite.OfficeImageId = "AllCategories";
-            //this.buttonFontBlackWhite.ScreenTip = "Chuyển màu font";
-            //this.buttonFontBlackWhite.ShowImage = true;
-            //this.buttonFontBlackWhite.SuperTip = "Chuyển màu font chữ sang trắng hoặc đen";
-            //this.buttonFontBlackWhite.Click += (sender, e) => this.buttonFontBlackWhite_Click();
+            this.buttonCortana.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.buttonCortana.Description = "???";
+            this.buttonCortana.Label = "Cortana";
+            this.buttonCortana.Name = "buttonCortana";
+            this.buttonCortana.OfficeImageId = "AllCategories";
+            this.buttonCortana.ScreenTip = "Cortana - Speech recognition";
+            this.buttonCortana.ShowImage = true;
+            this.buttonCortana.SuperTip = "Speech recognition";
+            this.buttonCortana.Click += (sender, e) => this.buttonCortana_Click();
 
             // 
             // groupAlgorithm
@@ -181,8 +181,8 @@ namespace ExcelAddIn
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonColorize;
         internal Microsoft.Office.Tools.Ribbon.RibbonDropDown dropDownColorRGB;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editSaturationPeak;
-        //internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupFontBlackWhite;
-        //internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonFontBlackWhite;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupCortana;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCortana;
     }
 
     partial class ThisRibbonCollection

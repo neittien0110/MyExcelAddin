@@ -296,7 +296,7 @@ namespace ExcelFuntions
         /// <returns></returns>
         [ExcelDna.Integration.ExcelFunction(Description = "Viết số bằng chữ tiếng Việt có dấu")]
         public static string BangChu(
-            [ExcelDna.Integration.ExcelArgument(Description = "Số nguyên cần viết bằng chữ")] int number
+            [ExcelDna.Integration.ExcelArgument(Description = "Số nguyên cần viết bằng chữ")] long number
             )
         {
             return DocTienBangChu(number);
@@ -307,7 +307,7 @@ namespace ExcelFuntions
         /// <param name="number"></param>
         /// <returns></returns>
         public static string InText(
-            [ExcelDna.Integration.ExcelArgument(Description = "Integer number to text")] int number
+            [ExcelDna.Integration.ExcelArgument(Description = "Integer number to text")] long number
             )
         {
             return ReadMoneyInText(number);
