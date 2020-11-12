@@ -49,5 +49,25 @@ namespace MyExcelAddIn
             Thread.Sleep(1000);
             return $"Hello {name}";
         }
+
+        /// <summary>
+        ///         KipThi function, return the starting time of the exam
+        /// </summary>
+        /// <param name="Kip">Kíp thi từ 1 đến 4</param>
+        /// <returns></returns>
+        [ExcelDna.Integration.ExcelFunction(Description = "Return starting time of the exam", Name = "KipThi")]
+        public static object KipThi(int Kip)
+        {
+            string startingTime;
+            switch (Kip)
+            {
+                case 1: startingTime = "7:00"; break;
+                case 2: startingTime = "9:30"; break;
+                case 3: startingTime = "12:30"; break;
+                case 4: startingTime = "15:00"; break;
+                default: startingTime = "Invalid"; break;
+            }
+            return startingTime;
+        }
     }
 }

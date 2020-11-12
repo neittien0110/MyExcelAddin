@@ -6,6 +6,7 @@ using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Speech.Recognition;
 
 namespace ExcelAddIn
 {
@@ -17,9 +18,9 @@ namespace ExcelAddIn
         }
 
         private void buttonImage2Cells_Click(object sender, RibbonControlEventArgs e)
-        {
+        {   //load image into cells - by MSc Tien
             Bitmap img;
-            const int MAX_HEIGHT = 320;
+            //const int MAX_HEIGHT = 320;
             const int MAX_PIXEL = 82455; //chính xác đúng ngần này điểm
 
             /// Tạo dialog để chọn file ảnh
@@ -155,6 +156,143 @@ namespace ExcelAddIn
         /// <param name="width">chiều ngang mong muốn</param>
         /// <param name="height">chiều dọc mong muốn</param>
         /// <returns></returns>
+        /// 
+
+        private void buttonColorize_Click(string color, string saturation)
+        {   //Colorize the cells based on selected color and saturation - by Stnd Tuong
+
+            //get selected cells
+            Range currentRange = (Range)Globals.ThisAddIn.Application.Selection as
+                Microsoft.Office.Interop.Excel.Range;
+            if (currentRange == null) return;
+
+            //Read each cell and colorize it
+            //foreach(var mycell in currentRange.Cells)
+            //{
+            //    //ignore null cells
+            //    if(mycell!= null && ((dynamic)(mycell)).Value != null)
+            //    {
+            //        currentRange.Interior.Color = 37;
+            //    }
+            //}
+
+            
+            int saturationInt; //saturation value in integer 
+            bool isNumeric = int.TryParse(saturation,out saturationInt); //boolean to check if saturation is a valid number
+            if (isNumeric) //check if the saturation is a number
+            {
+                if (saturationInt >= 0 && saturationInt <= 255) //check if the saturation value is in range 0 to 255
+                {
+                    switch (color) // color to display with saturation 
+                    {
+                        case "AppointmentColor1": currentRange.Interior.Color = Color.FromArgb(saturationInt, 0, 0); break; //red
+                        case "AppointmentColor2": currentRange.Interior.Color = Color.FromArgb(0, 0, saturationInt); break; //green
+                        case "AppointmentColor3": currentRange.Interior.Color = Color.FromArgb(0, saturationInt, 0); break; //blue
+                        case "AppointmentColor4": currentRange.Interior.Color = Color.FromArgb(saturationInt, saturationInt, saturationInt); break; //gray
+                        default: break;
+                    }
+                    if (saturationInt > 128) // change font color to black or white based on background's saturation
+                    {
+                        currentRange.Font.Color = Color.Black;
+                    }
+                    else
+                    {
+                        currentRange.Font.Color = Color.White;
+                    }
+                    currentRange.Value = saturationInt; // cell value = saturation value
+                }
+                else
+                {
+                    //saturation is not in range 0 to 255
+                    MessageBox.Show("Please input a number between 0 and 255 at saturation box", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                //saturation is not a valid number
+                MessageBox.Show("Invalid type, please input a number at saturation box", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+            
+            //test code:
+            //currentRange.Value = color;
+            //currentRange.Interior.Color = Color.FromArgb(0, 200, 0);
+
+        }
+
+        private static SpeechRecognitionEngine engine;
+        //private System.Windows.Forms.TextBox textBox;
+        private void buttonCortana_Click()
+        {   //Speech recognition
+
+            //get selected cells
+            //Range currentRange = (Range)Globals.ThisAddIn.Application.Selection as
+            //    Microsoft.Office.Interop.Excel.Range;
+            //if (currentRange == null) return;
+
+
+            //MessageBox.Show(currentRange.Font.Color.ToString()); //Color is stored in decimal number 
+
+            //string str = "101";
+            //int s = int.Parse(str);
+            //MessageBox.Show(s.ToString("X"));
+
+            //MessageBox.Show(int.Parse(currentRange.Font.Color.ToString()).ToString("X"));
+            engine = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
+            engine.SetInputToDefaultAudioDevice();
+
+            //CultureInfo ci = new CultureInfo("en-us"); //try later
+            //sre = new SpeechRecognitionEngine(ci);
+
+            engine.LoadGrammar(new DictationGrammar());//not so correct
+            engine.RecognizeAsync(RecognizeMode.Single);
+
+            //engine.SpeechRecognized += Rec;
+            //textBox = new System.Windows.Forms.TextBox();
+            //textBox.Text = "showing textBox now";
+            ////textBox.Visible = true;
+            //textBox.Show();
+            engine.AudioStateChanged += new EventHandler<AudioStateChangedEventArgs>(AudioChanged);
+            engine.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(Rec);
+
+            //currentRange.Value = "st";
+
+            
+        }
+        private static void AudioChanged(object sender, AudioStateChangedEventArgs e)
+        {
+            Range currentRange = (Range)Globals.ThisAddIn.Application.Selection as
+                Microsoft.Office.Interop.Excel.Range;
+            if (currentRange == null) return;
+            //currentRange.Value = e.AudioState;  //Silence	1	Receiving silence or non-speech background noise.
+            //Speech    2   Receiving speech input.
+            //Stopped   0   Not processing audio input.
+            //if (e.AudioState != 0)
+            //{
+            //    currentRange.Value = e.AudioState.ToString();
+            //}
+            //if ((int)e.AudioState == 1)
+            //{
+            //    currentRange.Value = e.AudioState.ToString();
+            //}
+            switch ((int)e.AudioState)
+            {
+                case 1: currentRange.Value = "Please say something"; break;//NOT SO ACCURATE
+                case 2: currentRange.Value = "Listening..."; break;
+                //case 0: currentRange.Value = "Stopped"; break;
+                default: break;
+            }
+        }
+        private static void Rec(object sender, SpeechRecognizedEventArgs result)
+        {
+            //Console.WriteLine("you said : {0} conf: {1}", rerult.Result.Text, rerult.Result.Confidence);
+            Range currentRange = (Range)Globals.ThisAddIn.Application.Selection as
+                Microsoft.Office.Interop.Excel.Range;
+            if (currentRange == null) return;
+            currentRange.Value = result.Result.Text;
+        }
+
+
         static Bitmap ResizeBitmap(Bitmap bmp, int width, int height)
         {
             Bitmap result = new Bitmap(width, height);
