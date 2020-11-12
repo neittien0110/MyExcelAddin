@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_57E0811D93CC48748F478A2986E3B9C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_66CF1C643729478896010CD926B7E3E5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -87,8 +93,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_734983417DD4592BE662C637EB846045"
+        "OwnerKey" = "8:_711CA4E824A34EC48C54671EE918E51D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7F2258CA307B3133437C8D4163F7B806"
         "OwnerKey" = "8:_46E27235313E4876B7D83076B4DEE4A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_894D7EF62987426F8873A952A3F689BF"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,6 +124,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C5AE486B8D1E4C06BB86894F35A2EF2A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C794EE43AED141BDAD29944C5097F4F9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -191,6 +215,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_711CA4E824A34EC48C54671EE918E51D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_734983417DD4592BE662C637EB846045"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -489,6 +519,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_57E0811D93CC48748F478A2986E3B9C1"
+            {
+            "SourcePath" = "8:..\\ExcelFuntions\\bin\\Debug\\ExcelFuntions-AddIn.dna"
+            "TargetName" = "8:ExcelFuntions-AddIn.dna"
+            "Tag" = "8:"
+            "Folder" = "8:_0B15D63349CA4D05843FE0C49D565BCC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_66CF1C643729478896010CD926B7E3E5"
             {
             "SourcePath" = "8:..\\qrxel.ico"
@@ -560,6 +610,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_734983417DD4592BE662C637EB846045"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_734983417DD4592BE662C637EB846045"
+                    {
+                    "Name" = "8:NAudio.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NAudio.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2BF4F7871D934C72B6800F924794EA41"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F2258CA307B3133437C8D4163F7B806"
             {
             "AssemblyRegister" = "3:1"
@@ -589,6 +670,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_894D7EF62987426F8873A952A3F689BF"
+            {
+            "SourcePath" = "8:..\\ExcelFuntions\\bin\\Debug\\ExcelFuntions-AddIn-packed.xll"
+            "TargetName" = "8:ExcelFuntions-AddIn-packed.xll"
+            "Tag" = "8:"
+            "Folder" = "8:_0B15D63349CA4D05843FE0C49D565BCC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD1133BC987643E5A1BDC9D8836C9BD9"
@@ -646,6 +747,26 @@
             {
             "SourcePath" = "8:..\\ExcelFuntions\\bin\\Debug\\ExcelFuntions-AddIn64-packed.xll"
             "TargetName" = "8:ExcelFuntions-AddIn64-packed.xll"
+            "Tag" = "8:"
+            "Folder" = "8:_0B15D63349CA4D05843FE0C49D565BCC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C794EE43AED141BDAD29944C5097F4F9"
+            {
+            "SourcePath" = "8:..\\ExcelFuntions\\bin\\Debug\\ExcelFuntions-AddIn.xll"
+            "TargetName" = "8:ExcelFuntions-AddIn.xll"
             "Tag" = "8:"
             "Folder" = "8:_0B15D63349CA4D05843FE0C49D565BCC"
             "Condition" = "8:"
@@ -924,7 +1045,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MyExcelAddin"
         "ProductCode" = "8:{B308542F-A13F-4E98-A2EA-D1968C033194}"
-        "PackageCode" = "8:{C3B39C7F-8673-45C6-9BF9-6DE6BD6F0D03}"
+        "PackageCode" = "8:{BEDB9F7D-C19D-45A3-BA13-FFB038FD8BF5}"
         "UpgradeCode" = "8:{12E3EABA-E0B4-4346-8D06-49991C06C570}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -933,7 +1054,7 @@
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Techlink"
-        "ARPHELPTELEPHONE" = "8:"
+        "ARPHELPTELEPHONE" = "8:+84-913137399"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Bộ cài đặt MyExcelAddin"
         "Subject" = "8:Các hàm và tiện ích mở rộng"
