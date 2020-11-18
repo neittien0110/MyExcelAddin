@@ -15,6 +15,11 @@ namespace MyExcelAddIn
     /// <summary>
     ///         Các hàm Excel liên quan tới sinh mã barcode
     /// </summary>
+    /// <remarks>
+    ///         Có 2 họ hàm
+    ///             + Sử dụng Google API service, yêu cầu phải có kết nối mạng khi sử dụng
+    ///             + Sử dụng thư viện ZXing, không cần có mạng
+    /// </remarks>
     public class Barcode
     {
         /// <summary>
@@ -74,8 +79,6 @@ namespace MyExcelAddIn
 
         [ExcelDna.Integration.ExcelFunction(Description = "Tạo mã QRCode")]
         public static object QRCode(
-            [ExcelDna.Integration.ExcelArgument(Description = "Dịch vụ tạo QRCode; 1 = ZXing library, 2 = Google API")]
-            int option,
             [ExcelDna.Integration.ExcelArgument(Description = "Tên của Shape sẽ chứa ảnh QRCode (xem bằng Selection Pane). Nếu shape chưa tồn tại, hàm sẽ tự tạo mới. Ví dụ: tl123")] 
             string ShapeName,
             [ExcelDna.Integration.ExcelArgument(Description = "Văn bản cần chuyển thành QRcode. Ví dụ: xin chào bạn")]
@@ -112,6 +115,7 @@ namespace MyExcelAddIn
             {
                 try
                 {
+                    int option = 1; // luôn sử dụng thư viện ZXing
                     if (option == 1)
                     {
                         MyShape.Fill.UserPicture(Barcode.GetQRCodeLocalFileNameByZXing(Text, 500, CorrectionLevel.High, Margin));

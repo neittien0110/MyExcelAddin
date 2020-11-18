@@ -290,9 +290,9 @@ namespace ExcelFuntions
         }
 
         /// <summary>
-        /// 
+        ///     Viết số bằng chữ tiếng Việt có dấu
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">Số tiền cần viết</param>
         /// <returns></returns>
         [ExcelDna.Integration.ExcelFunction(Description = "Viết số bằng chữ tiếng Việt có dấu")]
         public static string BangChu(
@@ -306,6 +306,7 @@ namespace ExcelFuntions
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
+        [ExcelDna.Integration.ExcelFunction(Description = "Convert number to Text")]
         public static string InText(
             [ExcelDna.Integration.ExcelArgument(Description = "Integer number to text")] long number
             )
