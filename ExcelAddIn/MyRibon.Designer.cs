@@ -52,6 +52,7 @@
             this.groupAudio = this.Factory.CreateRibbonGroup();
             this.buttonTextToSpeech = this.Factory.CreateRibbonButton();
             this.buttonSpeechVN = this.Factory.CreateRibbonButton();
+            this.groupAbout = this.Factory.CreateRibbonGroup();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.groupAlgorithm.SuspendLayout();
@@ -64,6 +65,7 @@
             this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.groupAlgorithm);
             this.tab1.Groups.Add(this.groupAudio);
+            this.tab1.Groups.Add(this.groupAbout);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -161,6 +163,11 @@
     "ết phải có kết nối internet";
             this.buttonSpeechVN.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonSpeechVN_Click);
             // 
+            // groupAbout
+            // 
+            this.groupAbout.Label = "Giới thiệu";
+            this.groupAbout.Name = "groupAbout";
+            // 
             // MyRibon
             // 
             this.Name = "MyRibon";
@@ -191,6 +198,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupAudio;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonTextToSpeech;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSpeechVN;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupAbout;
     }
 
     partial class ThisRibbonCollection
