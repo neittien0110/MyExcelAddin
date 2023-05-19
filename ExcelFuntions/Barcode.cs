@@ -91,6 +91,8 @@ namespace MyExcelAddIn
 
         [ExcelDna.Integration.ExcelFunction(Description = "Tạo mã QRCode")]
         public static object QRCode(
+            [ExcelDna.Integration.ExcelArgument(Description = "Dịch vụ tạo QRCode; 1 = ZXing library, 2 = Google API")]
+            int option,
             [ExcelDna.Integration.ExcelArgument(Description = "Tên của Shape sẽ chứa ảnh QRCode (xem bằng Selection Pane). Nếu shape chưa tồn tại, hàm sẽ tự tạo mới. Ví dụ: tl123")] 
             string ShapeName,
             [ExcelDna.Integration.ExcelArgument(Description = "Văn bản cần chuyển thành QRcode. Ví dụ: xin chào bạn")]

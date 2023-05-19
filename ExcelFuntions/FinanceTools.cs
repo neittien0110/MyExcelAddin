@@ -138,6 +138,72 @@ namespace ExcelFuntions
             }
             return KetQua;
         }
+        /// <summary>
+        ///     Function read 3-digit number
+        /// </summary>
+        /// <param name="threeDigit"></param>
+        /// <returns></returns>
+        static private string Read3DigitNumber( int threeDigit)
+        {
+            int hundreds, tens, ones;
+            string Result = "";
+            hundreds = (int)(threeDigit / 100);
+            tens = (int)((threeDigit % 100) / 10);
+            ones = threeDigit % 10;
+            if ((hundreds == 0) && (tens == 0) && (ones == 0)) return "";
+            if (hundreds != 0)
+            {
+                Result += NumberInText[hundreds] + " hundred";
+                //if ((tens == 0) && (ones != 0)) Result += ""
+            }
+            if ((tens == 0) && (ones != 0))
+            {
+                Result += " "+ NumberInText[ones];
+            }
+            else if ((tens == 0) && (ones == 0))
+            {
+
+            }
+            else
+            {
+                if (tens == 1)
+                {
+                    switch (ones)
+                    {
+                        case 0: Result += " ten"; break;
+                        case 1: Result += " eleven"; break;
+                        case 2: Result += " twelve"; break;
+                        case 3: Result += " thirteen"; break;
+                        case 4: Result += " fourteen"; break;
+                        case 5: Result += " fifteen"; break;
+                        case 6: Result += " sixteen"; break;
+                        case 7: Result += " seventeen"; break;
+                        case 8: Result += " eighteen"; break;
+                        case 9: Result += " nineteen"; break;
+                        default: break;
+                    }
+                }
+                else
+                {
+                    switch (tens)
+                    {
+                        case 2: Result += " twenty"; break;
+                        case 3: Result += " thirty"; break;
+                        case 4: Result += " forty"; break;
+                        case 5: Result += " fifty"; break;
+                        case 6: Result += " sixty"; break;
+                        case 7: Result += " seventy"; break;
+                        case 8: Result += " eighty"; break;
+                        case 9: Result += " ninety"; break;
+                        default: break;
+                    }
+                    Result += "-"+ NumberInText[ones];
+                }
+            }
+            
+            return Result;
+
+        }
 
         /// <summary>
         ///     Viết số bằng chữ tiếng Việt có dấu
@@ -218,6 +284,7 @@ namespace ExcelFuntions
             return Result;
 
         }
+
 
         /// <summary>
         ///     Main function to read number in text
@@ -340,7 +407,9 @@ namespace ExcelFuntions
             /// Xác định loại ngày lấy tỷ giá
             if (date != "")
             {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 DateTime ExchangeDate = new DateTime();
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
                 try
                 {
                     ExchangeDate = DateTime.ParseExact(date, "dd/mm/yyyy", null);
@@ -351,7 +420,9 @@ namespace ExcelFuntions
                 }
                 if (ExchangeDate.Date > DateTime.Today)
                 {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                     date = "";
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
                     return "Out of date";
                 }
                 date = ExchangeDate.ToString("dd/mm/yyyy");
@@ -457,7 +528,9 @@ namespace ExcelFuntions
                 VCBCrawedURL.Clear();
             }
             /// Chuyển đổi về dạng số và có lưu ý về qui tắc dấu .,
+#pragma warning disable IDE0017 // Simplify object initialization
             NumberFormatInfo VCBformatProvider = new NumberFormatInfo();
+#pragma warning restore IDE0017 // Simplify object initialization
             VCBformatProvider.NumberDecimalSeparator = ".";
             VCBformatProvider.NumberGroupSeparator = ",";
             /// Trả về quả 
